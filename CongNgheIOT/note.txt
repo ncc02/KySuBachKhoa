@@ -1,0 +1,2 @@
+mỗi lần chạy phải config 115200 tera term
+De thi co the: thay doi den tu cam bien nhiệt do do am
