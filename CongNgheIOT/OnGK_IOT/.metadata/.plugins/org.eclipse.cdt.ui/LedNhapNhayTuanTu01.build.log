@@ -1,0 +1,18 @@
+00:46:35 **** Incremental Build of configuration Debug for project LedNhapNhayTuanTu01 ****
+make -r -j28 all 
+Building file: ../src/hal_entry.c
+../src/hal_entry.c: In function 'hal_entry':
+../src/hal_entry.c:11:14: warning: unused variable 'delay' [-Wunused-variable]
+   11 |     uint32_t delay = 1000;  // 1 second
+      |              ^~~~~
+../src/hal_entry.c:8:29: warning: unused variable 'bsp_delay_units' [-Wunused-variable]
+    8 |     const bsp_delay_units_t bsp_delay_units = BSP_DELAY_UNITS_MILLISECONDS;
+      |                             ^~~~~~~~~~~~~~~
+Building target: LedNhapNhayTuanTu01.elf
+arm-none-eabi-objcopy -O srec "LedNhapNhayTuanTu01.elf"  "LedNhapNhayTuanTu01.srec"
+arm-none-eabi-size --format=berkeley "LedNhapNhayTuanTu01.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1936	      8	   1168	   3112	    c28	LedNhapNhayTuanTu01.elf
+
+00:46:35 Build Finished. 0 errors, 2 warnings. (took 307ms)
+

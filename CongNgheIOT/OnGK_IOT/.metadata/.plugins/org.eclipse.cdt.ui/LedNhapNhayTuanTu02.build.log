@@ -1,0 +1,11 @@
+21:28:28 **** Build of configuration Debug for project LedNhapNhayTuanTu02 ****
+make -r -j28 all 
+Building file: ../src/hal_entry.c
+Building target: LedNhapNhayTuanTu02.elf
+arm-none-eabi-objcopy -O srec "LedNhapNhayTuanTu02.elf"  "LedNhapNhayTuanTu02.srec"
+arm-none-eabi-size --format=berkeley "LedNhapNhayTuanTu02.elf"
+   text	   data	    bss	    dec	    hex	filename
+   3132	      8	   1176	   4316	   10dc	LedNhapNhayTuanTu02.elf
+
+21:28:28 Build Finished. 0 errors, 0 warnings. (took 403ms)
+
