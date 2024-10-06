@@ -1,0 +1,46 @@
+Extracting support files...
+19:44:06 **** Incremental Build of configuration Debug for project NhietDoDoAm ****
+make -r -j28 all 
+Building file: ../src/hal_entry.c
+../src/hal_entry.c: In function 'hal_entry':
+../src/hal_entry.c:132:23: warning: comparison of integer expressions of different signedness: 'uint32_t' {aka 'long unsigned int'} and 'int16_t' {aka 'short int'} [-Wsign-compare]
+  132 |          if (previos  < hs300x_data.humidity.integer_part) val = min(800, val + 200);
+      |                       ^
+../src/hal_entry.c:133:20: warning: conversion to 'uint32_t' {aka 'long unsigned int'} from 'int16_t' {aka 'short int'} may change the sign of the result [-Wsign-conversion]
+  133 |          previos = hs300x_data.humidity.integer_part;
+      |                    ^~~~~~~~~~~
+../src/hal_entry.c:141:50: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  141 |              sprintf(write_buffer, "delay +/- : %d\n\r", val);
+      |                                                 ~^       ~~~
+      |                                                  |       |
+      |                                                  int     uint32_t {aka long unsigned int}
+      |                                                 %ld
+../src/hal_entry.c:181:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  181 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:182:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  182 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:183:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  183 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:188:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  188 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:189:31: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  189 |                R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_HIGH);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:190:31: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  190 |                R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_HIGH);
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:50:20: warning: unused variable 'pin_level' [-Wunused-variable]
+   50 |     bsp_io_level_t pin_level = BSP_IO_LEVEL_LOW;
+      |                    ^~~~~~~~~
+../src/hal_entry.c:43:20: warning: unused variable 'freq_in_hz' [-Wunused-variable]
+   43 |     const uint32_t freq_in_hz = 1;
+      |                    ^~~~~~~~~~
+Building target: NhietDoDoAm.elf
+arm-none-eabi-objcopy -O srec "NhietDoDoAm.elf"  "NhietDoDoAm.srec"
+arm-none-eabi-size --format=berkeley "NhietDoDoAm.elf"
+   text	   data	    bss	    dec	    hex	filename
+  11680	    112	   2072	  13864	   3628	NhietDoDoAm.elf

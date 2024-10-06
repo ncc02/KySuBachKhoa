@@ -1,0 +1,114 @@
+09:14:23 **** Incremental Build of configuration Debug for project PPGMode_OB1203_Team4 ****
+make -r -j28 all 
+Building file: ../src/hal_entry.c
+../src/hal_entry.c: In function 'hal_entry':
+../src/hal_entry.c:94:69: warning: conversion to 'int' from 'uint32_t' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+   94 |         sprintf (write_buffer, "test %d \n\r", findMax(p_ob1203_data.red_data, p_ob1203_data.green_data, p_ob1203_data.blue_data));
+      |                                                        ~~~~~~~~~~~~~^~~~~~~~~
+../src/hal_entry.c:94:93: warning: conversion to 'int' from 'uint32_t' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+   94 |         sprintf (write_buffer, "test %d \n\r", findMax(p_ob1203_data.red_data, p_ob1203_data.green_data, p_ob1203_data.blue_data));
+      |                                                                                ~~~~~~~~~~~~~^~~~~~~~~~~
+../src/hal_entry.c:94:119: warning: conversion to 'int' from 'uint32_t' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+   94 |         sprintf (write_buffer, "test %d \n\r", findMax(p_ob1203_data.red_data, p_ob1203_data.green_data, p_ob1203_data.blue_data));
+      |                                                                                                          ~~~~~~~~~~~~~^~~~~~~~~~
+../src/hal_entry.c:116:38: warning: conversion to 'int' from 'uint32_t' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+  116 |         switch (findMax(p_ob1203_data.red_data, p_ob1203_data.green_data, p_ob1203_data.blue_data))
+      |                         ~~~~~~~~~~~~~^~~~~~~~~
+../src/hal_entry.c:116:62: warning: conversion to 'int' from 'uint32_t' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+  116 |         switch (findMax(p_ob1203_data.red_data, p_ob1203_data.green_data, p_ob1203_data.blue_data))
+      |                                                 ~~~~~~~~~~~~~^~~~~~~~~~~
+../src/hal_entry.c:116:88: warning: conversion to 'int' from 'uint32_t' {aka 'long unsigned int'} may change the sign of the result [-Wsign-conversion]
+  116 |         switch (findMax(p_ob1203_data.red_data, p_ob1203_data.green_data, p_ob1203_data.blue_data))
+      |                                                                           ~~~~~~~~~~~~~^~~~~~~~~~
+../src/hal_entry.c:120:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  120 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:121:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  121 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:122:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  122 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:124:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  124 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red_left, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:128:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  128 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red_left, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:135:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  135 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:136:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  136 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:137:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  137 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:139:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  139 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green_left, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:143:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  143 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green_left, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:149:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  149 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:150:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  150 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:151:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  151 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:153:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  153 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue_left, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:157:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  157 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue_left, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:162:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  162 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:163:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  163 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:164:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  164 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:170:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  170 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:171:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  171 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:172:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  172 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:178:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  178 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_HIGH);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:179:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  179 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:180:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  180 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:186:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  186 |                 R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:187:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  187 |                 R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:188:32: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  188 |                 R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_LOW);
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:61:20: warning: unused variable 'pin_level' [-Wunused-variable]
+   61 |     bsp_io_level_t pin_level = BSP_IO_LEVEL_LOW;
+      |                    ^~~~~~~~~
+Building target: PPGMode_OB1203_Team4.elf
+arm-none-eabi-objcopy -O srec "PPGMode_OB1203_Team4.elf"  "PPGMode_OB1203_Team4.srec"
+arm-none-eabi-size --format=berkeley "PPGMode_OB1203_Team4.elf"
+   text	   data	    bss	    dec	    hex	filename
+  15376	    172	   2092	  17640	   44e8	PPGMode_OB1203_Team4.elf
+
+09:14:27 Build Finished. 0 errors, 34 warnings. (took 3s.569ms)
+

@@ -1,0 +1,8 @@
+16:04:08 **** Incremental Build of configuration Debug for project NhietDoDoAm ****
+make -r -j28 all 
+arm-none-eabi-size --format=berkeley "NhietDoDoAm.elf"
+   text	   data	    bss	    dec	    hex	filename
+  11692	    112	   2072	  13876	   3634	NhietDoDoAm.elf
+
+16:04:08 Build Finished. 0 errors, 0 warnings. (took 89ms)
+

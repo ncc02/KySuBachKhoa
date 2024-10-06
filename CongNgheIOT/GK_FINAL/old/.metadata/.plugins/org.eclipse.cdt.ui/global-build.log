@@ -1,0 +1,9 @@
+Extracting support files...
+06:25:59 **** Incremental Build of configuration Debug for project PrintDataTeraTermUART ****
+make -r -j28 all 
+Building file: ../src/hal_entry.c
+Building target: PrintDataTeraTermUART.elf
+arm-none-eabi-objcopy -O srec "PrintDataTeraTermUART.elf"  "PrintDataTeraTermUART.srec"
+arm-none-eabi-size --format=berkeley "PrintDataTeraTermUART.elf"
+   text	   data	    bss	    dec	    hex	filename
+  11312	    112	   2072	  13496	   34b8	PrintDataTeraTermUART.elf

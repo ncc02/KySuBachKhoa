@@ -1,0 +1,8 @@
+collapse/module.driver.comms_i2c_on_comms_i2c_bus.2011260884=false
+collapse/module.driver.comms_i2c_on_comms_i2c_device.956197972=false
+collapse/module.driver.i2c_on_iic_master.1867666553=false
+collapse/module.driver.ob1203_light_prox_mode_on_ob1203.1070916185=false
+collapse/module.driver.ob1203_on_ob1203.2096363593=false
+collapse/module.driver.spi_on_sci_spi.78349182=false
+collapse/module.driver.uart_on_sci_uart.2067464737=false
+eclipse.preferences.version=1

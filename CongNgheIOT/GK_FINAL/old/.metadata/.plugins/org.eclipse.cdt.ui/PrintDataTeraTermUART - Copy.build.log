@@ -1,0 +1,10 @@
+13:46:19 **** Build of configuration Debug for project PrintDataTeraTermUART - Copy ****
+make -r -j28 all 
+Building target: PrintDataTeraTermUART - Copy.elf
+arm-none-eabi-objcopy -O srec "PrintDataTeraTermUART - Copy.elf"  "PrintDataTeraTermUART - Copy.srec"
+arm-none-eabi-size --format=berkeley "PrintDataTeraTermUART - Copy.elf"
+   text	   data	    bss	    dec	    hex	filename
+   7368	     12	   1604	   8984	   2318	PrintDataTeraTermUART - Copy.elf
+
+13:46:20 Build Finished. 0 errors, 0 warnings. (took 1s.35ms)
+

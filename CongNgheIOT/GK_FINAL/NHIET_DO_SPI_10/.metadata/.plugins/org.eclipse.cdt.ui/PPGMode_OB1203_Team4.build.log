@@ -1,0 +1,63 @@
+15:40:27 **** Incremental Build of configuration Debug for project PPGMode_OB1203_Team4 ****
+make -r -j28 all 
+Building file: ../src/hal_entry.c
+../src/hal_entry.c: In function 'hal_entry':
+../src/hal_entry.c:66:5: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+   66 |     sprintf(write_buffer, "SPI entry\r\n");
+      |     ^~~~~~~
+../src/hal_entry.c:2:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+    1 | #include "hal_data.h"
+  +++ |+#include <stdio.h>
+    2 | #define min(a, b) ((a) < (b) ? (a) : (b))
+../src/hal_entry.c:66:5: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+   66 |     sprintf(write_buffer, "SPI entry\r\n");
+      |     ^~~~~~~
+../src/hal_entry.c:66:5: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/hal_entry.c:91:36: warning: conversion from 'float' to 'uint8_t' {aka 'unsigned char'} may change value [-Wfloat-conversion]
+   91 |             uint8_t integer_part = temperature / 1;
+      |                                    ^~~~~~~~~~~
+../src/hal_entry.c:92:36: warning: conversion from 'float' to 'uint8_t' {aka 'unsigned char'} may change value [-Wfloat-conversion]
+   92 |             uint8_t decimal_part = (temperature - integer_part) * 100;
+      |                                    ^
+../src/hal_entry.c:102:53: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  102 |                 sprintf(write_buffer, "delay +/- : %d\n\r", val);
+      |                                                    ~^       ~~~
+      |                                                     |       |
+      |                                                     int     uint32_t {aka long unsigned int}
+      |                                                    %ld
+../src/hal_entry.c:142:28: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  142 |             R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_LOW);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:143:28: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  143 |             R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_HIGH);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:144:28: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  144 |             R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_LOW);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:149:28: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  149 |             R_BSP_PinWrite((bsp_io_port_t)pin_red, BSP_IO_LEVEL_HIGH);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:150:27: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  150 |            R_BSP_PinWrite((bsp_io_port_t)pin_green, BSP_IO_LEVEL_HIGH);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:151:27: warning: implicit conversion from 'enum e_bsp_io_port' to 'bsp_io_port_pin_t' {aka 'enum e_bsp_io_port_pin_t'} [-Wenum-conversion]
+  151 |            R_BSP_PinWrite((bsp_io_port_t)pin_blue, BSP_IO_LEVEL_HIGH);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:61:11: warning: unused variable 'MAX6675_temperature_value' [-Wunused-variable]
+   61 |     float MAX6675_temperature_value = 0;
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~
+../src/hal_entry.c:50:20: warning: unused variable 'pin_level' [-Wunused-variable]
+   50 |     bsp_io_level_t pin_level = BSP_IO_LEVEL_LOW;
+      |                    ^~~~~~~~~
+../src/hal_entry.c: In function 'read_celsius':
+../src/hal_entry.c:282:14: warning: conversion from 'double' to 'float' may change value [-Wfloat-conversion]
+  282 |     return v * 0.25;
+      |            ~~^~~~~~
+Building target: PPGMode_OB1203_Team4.elf
+arm-none-eabi-objcopy -O srec "PPGMode_OB1203_Team4.elf"  "PPGMode_OB1203_Team4.srec"
+arm-none-eabi-size --format=berkeley "PPGMode_OB1203_Team4.elf"
+   text	   data	    bss	    dec	    hex	filename
+  14096	    124	   2588	  16808	   41a8	PPGMode_OB1203_Team4.elf
+
+15:40:28 Build Finished. 0 errors, 14 warnings. (took 398ms)
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;PrintDataTeraTermUART/src/hal_entry_Phuc_thieu.c&apos; to &apos;nhapSoDeBatLed.txt&apos;" description="Rename resource &apos;hal_entry_Phuc_thieu.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/hal_entry_Phuc_thieu.c" name="nhapSoDeBatLed.txt" stamp="1727125069324" updateReferences="true"/>
+</session>

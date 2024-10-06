@@ -1,0 +1,112 @@
+#include "hal_data.h"
+#include "stdio.h"
+#include "string.h"
+
+// Khai báo các hàm và biến
+void R_BSP_WarmStart(bsp_warm_start_event_t event);
+void user_uart_callback(uart_callback_args_t *p_args);
+void console_write(const char *buffer);
+void console_read(char *buffer, uint32_t length);
+
+static volatile bool is_transfer_complete = false;
+
+void hal_entry (void)
+{
+#if BSP_TZ_SECURE_BUILD
+    R_BSP_NonSecureEnter();
+#endif
+
+    // Mở UART
+    R_SCI_UART_Open(&g_uart0_ctrl, &g_uart0_cfg);
+
+    char write_buffer[200] = {};
+    char input_buffer[3] = {}; // Buffer để nhận số từ người dùng
+    int input_number = 0;
+
+    while(1)
+    {
+        // Yêu cầu nhập số n
+        sprintf(write_buffer, "Nhap vao chieu cao cua cay thong (n): ");
+        console_write(write_buffer);
+
+        // Đọc số n từ người dùng
+        console_read(input_buffer, 2);
+        input_buffer[2] = '\0';
+        input_number = atoi(input_buffer);
+
+        // Hiển thị số nhận được
+        sprintf(write_buffer, "Chieu cao cua cay thong: %d \n\r", input_number);
+        console_write(write_buffer);
+
+        // Vẽ cây thông với chiều cao n
+        for (int i = 1; i <= input_number; i++)
+        {
+            int spaces = input_number - i;
+            int stars = 2 * i - 1;
+
+            // In khoảng trống
+            for (int j = 0; j < spaces; j++)
+            {
+                console_write(" ");
+            }
+            // In dấu *
+            for (int j = 0; j < stars; j++)
+            {
+                console_write("*");
+            }
+            console_write("\r\n"); // Xuống dòng sau khi in xong một tầng của cây thông
+        }
+
+        R_BSP_SoftwareDelay(1000, BSP_DELAY_UNITS_MILLISECONDS); // Đợi một khoảng thời gian trước khi tiếp tục
+    }
+}
+
+// Hàm khởi động
+void R_BSP_WarmStart (bsp_warm_start_event_t event)
+{
+    if (BSP_WARM_START_RESET == event)
+    {
+#if BSP_FEATURE_FLASH_LP_VERSION != 0
+        R_FACI_LP->DFLCTL = 1U;
+#endif
+    }
+
+    if (BSP_WARM_START_POST_C == event)
+    {
+        R_IOPORT_Open(&IOPORT_CFG_CTRL, &IOPORT_CFG_NAME);
+    }
+}
+
+// Callback cho UART
+void user_uart_callback(uart_callback_args_t *p_args)
+{
+    switch (p_args->event){
+        case UART_EVENT_TX_COMPLETE:
+        case UART_EVENT_RX_COMPLETE:
+        {
+            is_transfer_complete = true;
+            break;
+        }
+        default:
+        {
+        }
+    }
+}
+
+// Hàm ghi dữ liệu ra console
+void console_write(const char *buffer){
+    is_transfer_complete = false;
+    R_SCI_UART_Write(&g_uart0_ctrl, (uint8_t *) buffer, strlen(buffer));
+    while (!is_transfer_complete){
+        R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MICROSECONDS);
+    }
+}
+
+// Hàm đọc dữ liệu từ console
+void console_read(char *buffer, uint32_t length){
+    is_transfer_complete = false;
+    R_SCI_UART_Read(&g_uart0_ctrl, (uint8_t *) buffer, length);
+    while (!is_transfer_complete){
+        R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MICROSECONDS);
+    }
+}
